@@ -1,0 +1,124 @@
+El rastreador de tareas es un proyecto para gestionar y dar seguimiento a tus tareas. En esta tarea, crearás una interfaz de línea de comandos (CLI) sencilla para registrar lo que necesitas hacer, lo que ya has hecho y en qué estás trabajando actualmente. Este proyecto te ayudará a practicar tus habilidades de programación, incluyendo el manejo del sistema de archivos, la gestión de entradas de usuario y la creación de una aplicación CLI simple.
+
+Requisitos
+La aplicación debe ejecutarse desde la línea de comandos, aceptar acciones y entradas de usuario como argumentos y almacenar las tareas en un archivo JSON. El usuario debe poder:
+
+Agregar, actualizar y eliminar tareas
+
+Marcar una tarea como en progreso o completada
+
+Listar todas las tareas
+
+Listar todas las tareas completadas
+
+Listar todas las tareas pendientes
+
+Listar todas las tareas en progreso
+
+Estas son algunas restricciones que guiarán la implementación:
+
+Puedes usar cualquier lenguaje de programación para desarrollar este proyecto.
+
+Usa argumentos posicionales en la línea de comandos para aceptar entradas de usuario.
+import sys
+
+# Asegurarse de que se pasaron suficientes argumentos
+if len(sys.argv) > 2:
+    nombre = sys.argv[1]
+    edad = sys.argv[2] # Los argumentos son siempre strings
+    print(f"Hola {nombre}. Tienes {edad} años.")
+else:
+    print("Por favor, proporciona un nombre y una edad.")
+
+Usa un archivo JSON para almacenar las tareas en el directorio actual.
+
+Si el archivo JSON no existe, debe crearse.
+
+Utilice el módulo del sistema de archivos nativo de su lenguaje de programación para interactuar con el archivo JSON.
+Serialización: Puedes usar json.dump() para escribir un objeto de Python en un archivo JSON, o json.dumps() para convertirlo en una cadena de texto.
+Deserialización: Puedes usar json.load() para leer un archivo JSON y convertirlo en un objeto de Python, o json.loads() para convertir una cadena JSON en un objeto de Python. 
+
+
+No utilice bibliotecas ni marcos de trabajo externos para desarrollar este proyecto.
+
+Asegúrese de gestionar los errores y los casos límite de forma adecuada.
+
+Ejemplo: A continuación se muestra la lista de comandos y su uso:
+
+
+# Adding a new task
+task-cli add "Buy groceries"
+# Output: Task added successfully (ID: 1)
+
+# Updating and deleting tasks
+task-cli update 1 "Buy groceries and cook dinner"
+task-cli delete 1
+
+# Marking a task as in progress or done
+task-cli mark-in-progress 1
+task-cli mark-done 1
+
+# Listing all tasks
+task-cli list
+
+# Listing tasks by status
+task-cli list done
+task-cli list todo
+task-cli list in-progress
+
+
+Propiedades de la tarea
+
+Cada tarea debe tener las siguientes propiedades:
+
+id: Un identificador único para la tarea.
+
+descripción: Una breve descripción de la tarea.
+
+estado: El estado de la tarea (pendiente, en progreso, completada).
+
+fecha de creación: La fecha y hora en que se creó la tarea.
+
+fecha de última actualización: La fecha y hora en que se actualizó la tarea por última vez.
+
+Asegúrese de agregar estas propiedades al archivo JSON al agregar una nueva tarea y actualizarlas al modificar una existente.
+
+Primeros pasos
+Aquí tiene algunos pasos para comenzar con el proyecto Task Tracker CLI:
+
+Configure su entorno de desarrollo
+
+Elija un lenguaje de programación con el que se sienta cómodo (por ejemplo, Python, JavaScript, etc.).
+
+Asegúrese de tener instalado un editor de código o un IDE (por ejemplo, VSCode, PyCharm).
+
+Inicialización del proyecto
+
+Cree un nuevo directorio de proyecto para su Task Tracker CLI.
+
+Inicialice un sistema de control de versiones (por ejemplo, Git) para administrar su proyecto.
+
+Implementación de funcionalidades
+
+Comienza creando una estructura básica de interfaz de línea de comandos (CLI) para gestionar las entradas del usuario.
+
+Implementa cada funcionalidad una por una, asegurándote de probarla exhaustivamente antes de pasar a la siguiente. Por ejemplo, implementa primero la funcionalidad para añadir tareas, luego la de listarlas, después la de actualizarlas, marcarlas como en progreso, etc.
+
+Pruebas y depuración
+
+Prueba cada funcionalidad individualmente para asegurarte de que funciona como se espera. Revisa el archivo JSON para verificar que las tareas se almacenan correctamente.
+
+Depura cualquier problema que surja durante el desarrollo.
+
+Finalización del proyecto
+
+Asegúrate de que todas las funcionalidades estén implementadas y probadas.
+
+Limpia tu código y añade comentarios donde sea necesario.
+
+Redacta un archivo README claro sobre cómo usar tu CLI de seguimiento de tareas.
+
+Al finalizar este proyecto, habrás desarrollado una herramienta práctica que puede ayudarte a ti o a otros a gestionar tareas de forma eficiente. 
+Este proyecto sienta una base sólida para proyectos de programación más avanzados y aplicaciones del mundo real.
+
+¡Feliz programación!
