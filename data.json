@@ -2,8 +2,8 @@
     "tareas": [
         {
             "id": 1,
-            "descripcion": "Hacer limpieza",
-            "estado": "Pendiente",
+            "descripcion": "Prueba agregar",
+            "estado": "pendiente",
             "fecha de creacion": "2025-11-13",
             "fecha de actualizacion": "2025-11-13"
         },
@@ -13,7 +13,13 @@
             "estado": "Pendiente",
             "fecha de creacion": "2025-11-13",
             "fecha de actualizacion": "2025-11-13"
+        },
+        {
+            "id": 3,
+            "descripcion": "Hacer limpieza",
+            "estado": "Pendiente",
+            "fecha de creacion": "2025-11-13",
+            "fecha de actualizacion": "2025-11-13"
         }
     ]
 }
-
