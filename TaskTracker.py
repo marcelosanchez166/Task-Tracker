@@ -119,9 +119,9 @@ class Task():
         datos = self.leer_archivo()
         encontrado = False
         if "tareas" in datos:
-            for diccionario in datos["tareas"]:
-                if diccionario.get("estado", "").lower() == "completada":
-                    for clave, valor in diccionario.items():
+            for diccionario in datos["tareas"]:# recorre la lista del diccionario, por lo que cada diccionario dentro de la lista es una posicion
+                if diccionario.get("estado", "").lower() == "completada":# obtiene el valor de la clave estado del diccionario y lo compara en minusculas con la palabra completada
+                    for clave, valor in diccionario.items():#recorre los items de cada diccionario dentro de la lista e imprime su clave valor
                         print(f"{clave}: {valor}")
                     print("-" * 10)
                     encontrado = True
@@ -133,9 +133,9 @@ class Task():
         datos = self.leer_archivo()
         encontrado = False
         if "tareas" in datos:
-            for diccionario in datos["tareas"]:
-                if diccionario.get("estado", "").lower() == "pendiente":
-                    for clave, valor in diccionario.items():
+            for diccionario in datos["tareas"]:# recorre la lista del diccionario, por lo que cada diccionario dentro de la lista es una posicion
+                if diccionario.get("estado", "").lower() == "pendiente":# obtiene el valor de la clave estado del diccionario y lo compara en minusculas con la palabra pendiente
+                    for clave, valor in diccionario.items():#recorre los items de cada diccionario dentro de la lista e imprime su clave valor
                         print(f"{clave}: {valor}")
                     print("-" * 10)
                     encontrado = True
@@ -145,13 +145,13 @@ class Task():
 
     def Listar_todas_las_tareas_en_progreso(self):
         datos = self.leer_archivo()
-        encontrado = False
+        encontrado = False# se define la variable encontrado como False, para luego cambiar su valor a True si se encuentra al menos una tarea en progreso
         if "tareas" in datos:
-            for diccionario in datos["tareas"]:
-                if diccionario.get("estado", "").lower() == "en progreso":
-                    for clave, valor in diccionario.items():
+            for diccionario in datos["tareas"]:# recorre la lista del diccionario, por lo que cada diccionario dentro de la lista es una posicion
+                if diccionario.get("estado", "").lower() == "en progreso":# obtiene el valor de la clave estado del diccionario y lo compara en minusculas con la palabra en progreso
+                    for clave, valor in diccionario.items():#recorre los items de cada diccionario dentro de la lista e imprime su clave valor
                         print(f"{clave}: {valor}")
                     print("-" * 10)
-                    encontrado = True
+                    encontrado = True#cambia el valor de encontrado a True si encuentra al menos una tarea en progreso
         if not encontrado:
             print("No hay tareas en progreso")
